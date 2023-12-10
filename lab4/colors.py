@@ -1,10 +1,10 @@
 from PIL import ImageColor
 
-def mix_colors(bg_color_hex, fg_color_hex, intensity):
+def mix_colors(bg_color_hex, fg_color_hex, t):
     bg_color_rgb = ImageColor.getrgb(bg_color_hex)
     fg_color_rgb = ImageColor.getrgb(fg_color_hex)
 
-    color_rgb = tuple(int(lerp(bg_color_rgb[i], fg_color_rgb[i], intensity)) for i in range(3))
+    color_rgb = tuple(int(lerp(bg_color_rgb[i], fg_color_rgb[i], t)) for i in range(3))
 
     return rgb_to_hex(color_rgb)
 

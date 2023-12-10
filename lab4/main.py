@@ -92,13 +92,6 @@ def get_points_from_dataset_file(dataset_file_name: str):
     return points
 
 
-def save_points_to_dataset_file(points: iter, dataset_file_name: str):
-    with open(dataset_file_name, 'w') as dataset_file:
-        for point in points:
-            raw_coordinates = transform_coordinates_raw_to_normal(point)
-            dataset_file.write('{0} {1}\n'.format(*raw_coordinates))
-
-
 def transform_coordinates_raw_to_normal(raw_coordinates: tuple):
     return raw_coordinates[1], raw_coordinates[0]
 
